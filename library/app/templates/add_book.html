@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Neues Buch
+{% endblock %}
+
+{% block app_content %}
+    <h1>Neues Buch</h1>
+    <form method="POST" action="{{ url_for('add_book') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.titel.label(class="form-label") }}
+            {{ form.titel(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.autor.label(class="form-label") }}
+            {{ form.autor(class="form-control") }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Buch adden</button>
+    </form>
+{% endblock %}
